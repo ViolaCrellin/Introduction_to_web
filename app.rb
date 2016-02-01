@@ -8,8 +8,12 @@ get '/secret' do
   "It's not easy being green"
 end
 
-get '/cat' do
-  "<div>
-  <img src='http://bit.ly/1eze8aE'>
-  </div>"
+get '/random-cat' do
+  @name = ["Lulu", "Lala", "Tinky Winky"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  @name = params[:name]
+  erb(:index)
 end
